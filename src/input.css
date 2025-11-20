@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-red-600 { background-color: #dc2626; }
+  .bg-green-600 { background-color: #16a34a; }
+  .bg-yellow-600 { background-color: #ca8a04; }
+}
