@@ -9,8 +9,8 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import BrandPage from "./pages/BrandPage";
 import Services from "./pages/Services";
-import Partners from "./pages/partners";
-import Contacts from "./pages/contacts";
+import Partners from "./pages/Partners";
+import Contacts from "./pages/Contacts";
 
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
