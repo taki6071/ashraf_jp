@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import img1 from "../photo/hero2.png";
-import img2 from "../photo/port1.jpg";
+import img1 from "../photo/slide1.jpg";
+import img2 from "../photo/slide2.jpg";
 import img3 from "../photo/slide3.jpg";
 
 const images = [img1, img2, img3];
@@ -44,48 +44,41 @@ function Hero() {
   };
 
   return (
-    // <section class="pt-2 bg-linear-to-r from-red-500 to-yellow-300">
-    //   <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-    //     <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left ">
-    //       <h1 class="my-4 text-5xl font-bold leading-tight">
-    //         Your Trusted Global Partner for Quality Reconditioned Vehicles
-    //       </h1>
-    //       <p class="leading-normal text-2xl mb-8">
-    //         Premium Reconditioned Vehicles from Japan to Your Doorstep
-    //       </p>
-    //     </div>
-
-    //     <div class="w-full md:w-3/5 py-6 text-center ">
-    //         <img class="w-full md:w-4/5 mx-auto" src="./src/photo/hero.png" />
-    //       </div>
-    // <div
-    //   className="w-full h-[500px] bg-cover bg-center bg-no-repeat transition-all duration-700 bg-amber-400"
-    //   style={{ backgroundImage: `url(${images[index]})`,backgroundSize: "50%" }}
-    // ></div>
-    //   {/* </div>
-    // </section> */}
     <div
-      className="relative w-full h-[200px] sm:h-[330px] md:h-[550px] overflow-hidden bg-linear-to-r from-red-400 to-yellow-300"
+      className="relative w-full h-[200px] sm:h-[330px] md:h-[550px] overflow-hidden bg-linear-to-r from-red-400 to-yellow-300 mt-4"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* IMAGE SLIDER */}
       <div
-        className="flex h-full transition-transform duration-1200 ease-in-out"
+        className="flex h-full transition-transform duration-1000 "
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {images.map((img, i) => (
           <div
             key={i}
-            className="w-full h-full shrink-0 bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: "50%",
-              transform: "scale(2)",
-            }}
-          ></div>
+            className="w-full h-full shrink-0 bg-center bg-no-repeat bg-green-600 bg-contain"
+          >
+            <img
+              src={img}
+              alt=""
+              className="w-full h-full object-cover" // or object-contain
+            />
+          </div>
         ))}
+        <div className="w-full absolute top-1/2 -translate-y-1/2 text-white">
+          <h1 className="text-xl md:text-5xl font-bold drop-shadow-lg bg-black/30 pl-7 md:pl-18 pt-45 pb-50">
+            Your Trusted Global
+            <br />
+            Partner for Quality
+            <br /> Reconditioned Vehicles
+            <br /> from Japan
+          </h1>
+          {/* <p className="text-lg md:text-2xl mt-4 drop-shadow-lg">
+                Some subtitle or description here
+              </p> */}
+        </div>
       </div>
 
       {/* LEFT BUTTON */}
@@ -130,7 +123,7 @@ function Hero() {
             key={i}
             onClick={() => setIndex(i)}
             className={`w-4 sm:w-6 h-1.5 rounded-full transition 
-              ${index === i ? "bg-black" : "bg-white/50"}`}
+              ${index === i ? "bg-white" : "bg-black"}`}
           ></button>
         ))}
       </div>
