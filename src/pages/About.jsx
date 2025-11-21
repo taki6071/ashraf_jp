@@ -2,7 +2,7 @@ function About() {
   return (
     <div className="w-[90%] max-w-[900px] mx-auto mt-8 bg-white p-6 md:p-8 rounded-xl shadow-lg shadow-amber-400">
       {/* Page Title */}
-      <h1 className="text-3xl font-bold text-[#0b3d91] mb-3">About Us - kamrul</h1>
+      <h1 className="text-3xl font-bold text-[#0b3d91] mb-3">About Us</h1>
 
       {/* Company Overview */}
       <h2 className="text-2xl font-semibold text-[#0b3d91] mt-6">
