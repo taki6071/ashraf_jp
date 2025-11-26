@@ -59,7 +59,7 @@ function Hero() {
           {images.map((img, i) => (
             <div
               key={i}
-              className="w-full h-full shrink-0 bg-center bg-no-repeat bg-green-600 bg-contain"
+              className="w-full h-full shrink-0 bg-center bg-no-repeat bg-contain"
             >
               <img
                 src={img}

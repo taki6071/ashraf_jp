@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { brandData } from "../data/brands";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { db } from "../firebase/firebase";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
@@ -49,17 +50,40 @@ function BrandPage() {
         </div>
       )}
 
-      {vehicles.map((v) => (
-        <div className="grid grid-cols-1 md:grid-cols-4 mt-4">
-          <div className="border rounded p-3 shadow">
-            <img src={v.imageUrl} className="w-full h-48 object-cover" />
-            <p className="font-bold">{v.model}</p>
-            <p><strong>Price:</strong>   ${v.price}</p>
-            <p><strong>Mileage:</strong> {v.mileage} km</p>
-            <p><strong>Year:</strong> {v.year}</p>
-          </div>
-        </div>
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+        {vehicles.map((v) => {
+          // ⭐ Cloudinary Optimization
+          const optimizedUrl = v.imageUrl.replace(
+            "/upload/",
+            "/upload/f_auto,q_auto,w_auto/"
+          );
+
+          return (
+            <div key={v.id} className="border rounded p-3 shadow">
+              <Link to={`/products/${v.brand}/${v.id}`}>
+                <div>
+                  <img
+                    src={optimizedUrl}
+                    alt={v.model}
+                    className="w-full h-48 object-cover rounded"
+                    loading="lazy"
+                  />
+                  <p className="font-bold mt-2">{v.model}</p>
+                  <p>
+                    <strong>Price:</strong> ${v.price}
+                  </p>
+                  <p>
+                    <strong>Mileage:</strong> {v.mileage} km
+                  </p>
+                  <p>
+                    <strong>Year:</strong> {v.year}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

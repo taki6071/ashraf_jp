@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminUpload from "./pages/AdminUpload";
 import AdminAddCar from "./pages/AdminAddCar";
 import AdminEditCars from "./pages/AdminEditCars";
+import CarDetails from "./pages/CarDetails";
 
 // import contacts from "./pages/contacts";
 // import partners from "./pages/partners";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:brand" element={<BrandPage />} />
+          <Route path="/products/:brand/:id" element={<CarDetails />} />
           <Route path="/services" element={<Services />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contacts" element={<Contacts />} />
