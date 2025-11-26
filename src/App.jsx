@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Features from "./components/Features";
 import Footer from "./components/Footer";
 
 import About from "./pages/About";
@@ -15,6 +14,9 @@ import Contacts from "./pages/Contacts";
 
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminUpload from "./pages/AdminUpload";
+import AdminAddCar from "./pages/AdminAddCar";
+import AdminEditCars from "./pages/AdminEditCars";
 
 // import contacts from "./pages/contacts";
 // import partners from "./pages/partners";
@@ -48,6 +50,24 @@ function App() {
             element={
               <ProtectedRoute>
                 <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/add-car"
+            element={
+              <ProtectedRoute>
+                <AdminAddCar />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/edit-cars"
+            element={
+              <ProtectedRoute>
+                <AdminEditCars />
               </ProtectedRoute>
             }
           />

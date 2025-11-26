@@ -16,19 +16,19 @@ function Navbar() {
       </div>
       <ul className="list-reset lg:flex justify-end flex-1 items-center font-semibold hidden md:flex gap-6">
         <li className="mr-0">
-          <Link to="/about" class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> About Us</Link>
+          <Link to="/about" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> About Us</Link>
         </li>
         <li className="mr-0">
-          <Link to="/products" class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Products</Link>
+          <Link to="/products" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Products</Link>
         </li>
         <li className="mr-0">
-          <Link to="/services" class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Services</Link>
+          <Link to="/services" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Services</Link>
         </li>
         <li className="mr-0">
-          <Link to="/partners" class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Business Partners</Link>
+          <Link to="/partners" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Our Business Partners</Link>
         </li>
-        <li class="mr-5">
-          <Link to="/contacts" class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Contacts</Link>
+        <li className="mr-5">
+          <Link to="/contacts" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"> Contacts</Link>
         </li>
       </ul>
 
@@ -50,19 +50,19 @@ function Navbar() {
         `}
       >
         <li className="mr-3">
-          <Link to="/about" class="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> About Us</Link>
+          <Link to="/about" className="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> About Us</Link>
         </li>
         <li className="mr-3">
-          <Link to="/products" class="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Products</Link>
+          <Link to="/products" className="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Products</Link>
         </li>
         <li className="mr-3">
-          <Link to="/services" class="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Services</Link>
+          <Link to="/services" className="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Services</Link>
         </li>
         <li className="mr-3">
-          <Link to="/partners" class="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Business Partners</Link>
+          <Link to="/partners" className="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Our Business Partners</Link>
         </li>
-        <li class="mr-3">
-          <Link to="/contacts" class="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Contacts</Link>
+        <li className="mr-3">
+          <Link to="/contacts" className="inline-block no-underline hover:text-gray-300 hover:text-underline py-2 px-4" onClick={() => setOpen(false)}> Contacts</Link>
         </li>
       </ul>
     </nav>

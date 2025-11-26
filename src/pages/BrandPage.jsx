@@ -1,12 +1,26 @@
 import { useParams } from "react-router-dom";
 import { brandData } from "../data/brands";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { db } from "../firebase/firebase";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 
 function BrandPage() {
   const { brand } = useParams();
   const info = brandData[brand.toLowerCase()];
   const [selectedBody, setSelectedBody] = useState(info?.bodyTypes?.[0] || "");
-  const cars = info?.cars || []; // default empty array
+  // const cars = info?.cars || []; // default empty array
+  const [vehicles, setVehicles] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "vehicles"), where("brand", "==", brand));
+
+    const unsub = onSnapshot(q, (snap) => {
+      setVehicles(snap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+
+    return () => unsub();
+  }, [brand]);
 
   if (!info) {
     return <h1 className="text-center text-3xl mt-10">Brand Not Found</h1>;
@@ -35,22 +49,17 @@ function BrandPage() {
         </div>
       )}
 
-      {/* Images */}
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1">
-        {info.cars.map((car, idx) => (
-          
-          <div key={idx} className="w-full h-75 sm:h-60 md:h-75 overflow-hidden rounded-lg shadow-lg bg-gray-300 p-6 ">
-            <img
-            src={car.image}
-            alt={`${brand} ${idx + 1}`}
-            className="w-full h-50 object-contain"
-          />
-          <p className="font-semibold text-center">{car.model}</p>
-          <p>Milage : {car.mileage}</p>
-          <p>Price :{car.price}</p>
+      {vehicles.map((v) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 mt-4">
+          <div className="border rounded p-3 shadow">
+            <img src={v.imageUrl} className="w-full h-48 object-cover" />
+            <p className="font-bold">{v.model}</p>
+            <p><strong>Price:</strong>   ${v.price}</p>
+            <p><strong>Mileage:</strong> {v.mileage} km</p>
+            <p><strong>Year:</strong> {v.year}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

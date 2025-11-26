@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-white text-center py-6 mt-10">
       <p className="text-gray-300">© 2025 Ashraf Company Ltd. All rights reserved.</p>
-      <p className="text-gray-300"><a href="https://ashrafjp.netlify.app/admin-login">Admin</a></p>
+      <p className="text-gray-300"><a href="http://192.168.1.4:5173/admin-login">Admin</a></p>
     </footer>
   );
 }

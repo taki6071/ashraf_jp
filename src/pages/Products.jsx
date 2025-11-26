@@ -1,59 +1,75 @@
-import img1 from "../photo/brand_pic/audi.png";//13
-import img2 from "../photo/brand_pic/benz.png";//12
-import img3 from "../photo/brand_pic/bmw.png";//11
-import img4 from "../photo/brand_pic/honda.png";//4
-import img5 from "../photo/brand_pic/lambo.png";//10
-import img6 from "../photo/brand_pic/lexus.png";//3
-import img7 from "../photo/brand_pic/mazda.png";//5
-import img8 from "../photo/brand_pic/nissan.png";//2
-import img9 from "../photo/brand_pic/porche.png";//9
-import img10 from "../photo/brand_pic/rover.png";//8
-import img11 from "../photo/brand_pic/subaru.png";//6
-import img12 from "../photo/brand_pic/suzuki.png";//7
-import img13 from "../photo/brand_pic/toyota.png";//1
+import img1 from "../photo/brand_pic/audi.png"; //13
+import img2 from "../photo/brand_pic/benz.png"; //12
+import img3 from "../photo/brand_pic/bmw.png"; //11
+import img4 from "../photo/brand_pic/honda.png"; //4
+import img5 from "../photo/brand_pic/lambo.png"; //10
+import img6 from "../photo/brand_pic/lexus.png"; //3
+import img7 from "../photo/brand_pic/mazda.png"; //5
+import img8 from "../photo/brand_pic/nissan.png"; //2
+import img9 from "../photo/brand_pic/porche.png"; //9
+import img10 from "../photo/brand_pic/rover.png"; //8
+import img11 from "../photo/brand_pic/subaru.png"; //6
+import img12 from "../photo/brand_pic/suzuki.png"; //7
+import img13 from "../photo/brand_pic/toyota.png"; //1
 import { Link } from "react-router-dom";
 
 function Products() {
-    const brands = [{
+  const brands = [
+    {
       name: "toyota",
       image: img13,
-    }, {
+    },
+    {
       name: "nissan",
       image: img8,
-    }, {
+    },
+    {
       name: "lexus",
       image: img6,
-    }, {
+    },
+    {
       name: "honda",
       image: img4,
-    }, {
+    },
+    {
       name: "mazda",
       image: img7,
-    }, {
+    },
+    {
       name: "subaru",
       image: img11,
-    }, {
+    },
+    {
       name: "suzuki",
       image: img12,
-    }, {
+    },
+    {
       name: "rover",
       image: img10,
-    }, {
+    },
+    {
       name: "porche",
       image: img9,
-    }, {
+    },
+    {
       name: "lamborghini",
       image: img5,
-    }, {
+    },
+    {
       name: "bmw",
       image: img3,
-    }, {
+    },
+    {
       name: "benz",
       image: img2,
-    }, {
+    },
+    {
       name: "audi",
       image: img1,
-    }];
+    },
+  ];
+
+  // const q = query(collection(db, "vehicles"), where("brand", "==", brands.name));
 
   return (
     <div className="w-[90%] max-w-[900px] mx-auto mt-8 bg-white p-6 md:p-8 rounded-xl shadow-lg shadow-amber-400">
@@ -81,27 +97,17 @@ function Products() {
             className="sm:p-2 rounded-lg hover:bg-gray-300 text-center font-semibold capitalize"
           >
             {/* {brand} */}
-            <div className="w-full shadow-2xl shadow-blue-500 rounded-lg"><img src={brand.image} alt={brand.name} className="w-full h-30 sm:h-40 p-9 " /><p>{brand.name}</p></div>
+            <div className="w-full shadow-2xl shadow-blue-500 rounded-lg">
+              <img
+                src={brand.image}
+                alt={brand.name}
+                className="w-full h-30 sm:h-40 p-9 "
+              />
+              <p>{brand.name}</p>
+            </div>
           </Link>
         ))}
       </div>
-
-      {/* <div className="w-full h-full grid grid-cols-3 sm:grid-cols-5 text-center font-semibold pt-9">
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img1} alt="" className="w-full h-30 sm:h-40 p-9 " /><p>Audi</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img2} alt="" className="w-full h-30 sm:h-40 p-9 " /><p>Mercedes <br /> Benz</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img3} alt="" className="w-full h-30 sm:h-40 p-9" /><p>BMW</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img4} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Honda</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img5} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Lamborghini</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img6} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Lexus</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img7} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Mazda</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img8} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Nissan</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img9} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Porche</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img10} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Land Rover</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img11} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Subaru</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img12} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Suzuki</p></div>
-        <div className="w-full shadow-2xl shadow-amber-300"><img src={img13} alt="" className="w-full h-30 sm:h-40 p-9" /><p>Toyota</p></div>
-
-      </div> */}
     </div>
   );
 }
